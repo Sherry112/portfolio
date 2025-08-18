@@ -1,16 +1,15 @@
 const config = require('./src/config');
 
 module.exports = {
-  pathPrefix: '/portfolio', // Add this line for GitHub Pages subdirectory
   siteMetadata: {
-    title: 'Brittany Chiang',
+    title: 'Shah Khan',
     description:
-      'Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://sherry112.github.io/portfolio', // No trailing slash allowed!
+      'Shah Khan is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
+    siteUrl: 'https://your-netlify-site.netlify.app', // Update this after Netlify deployment
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    twitterUsername: '@shahkhan',
   },
-  plugins: [
+  ugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
@@ -156,5 +155,6 @@ module.exports = {
         trackingId: 'UA-45666519-2',
       },
     },
+    `gatsby-plugin-netlify`, // Should be last in the plugins array
   ],
 };
