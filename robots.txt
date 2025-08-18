@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://sherry112.github.io/sitemap.xml
-Host: https://sherry112.github.io
+Sitemap: https://your-netlify-site.netlify.app/sitemap.xml
+Host: https://your-netlify-site.netlify.app
