@@ -5,9 +5,8 @@ module.exports = {
     title: 'Shah Khan',
     description:
       'Shah Khan is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://your-netlify-site.netlify.app', // Update this after Netlify deployment
+    siteUrl: 'https://shah-khannetlify.app', // Update this after Netlify deployment
     image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@shahkhan',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -20,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brittany Chiang',
-        short_name: 'Brittany Chiang',
+        name: 'Shah Khan',
+        short_name: 'Shah Khan',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
