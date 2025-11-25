@@ -19,10 +19,12 @@ function usePrefersReducedMotion() {
     const listener = event => {
       setPrefersReducedMotion(!event.matches);
     };
-    mediaQueryList.addListener(listener);
-    return () => {
-      mediaQueryList.removeListener(listener);
-    };
+    if (mediaQueryList.addEventListener) {
+      mediaQueryList.addEventListener('change', listener);
+      return () => {
+        mediaQueryList.removeEventListener('change', listener);
+      };
+    }
   }, []);
   return prefersReducedMotion;
 }

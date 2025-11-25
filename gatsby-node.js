@@ -7,16 +7,6 @@
 const path = require('path');
 const _ = require('lodash');
 
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      fallback: {
-        crypto: false,
-      },
-    },
-  });
-};
-
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
@@ -102,6 +92,9 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
   actions.setWebpackConfig({
     resolve: {
+      fallback: {
+        crypto: false,
+      },
       alias: {
         '@components': path.resolve(__dirname, 'src/components'),
         '@config': path.resolve(__dirname, 'src/config'),

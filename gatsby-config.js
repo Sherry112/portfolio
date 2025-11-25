@@ -5,7 +5,7 @@ module.exports = {
     title: 'Shah Khan',
     description:
       'Shah Khan is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
-    siteUrl: 'https://shah-khannetlify.app', // Update this after Netlify deployment
+    siteUrl: 'https://shah-khan.netlify.app',
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },
   plugins: [
@@ -151,7 +151,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-45666519-2',
+        // TODO: Replace with your own Google Analytics tracking ID
+        // Or use environment variable: process.env.GATSBY_GA_TRACKING_ID
+        trackingId: process.env.GATSBY_GA_TRACKING_ID || 'UA-45666519-2',
       },
     },
     `gatsby-plugin-netlify`, // Should be last in the plugins array

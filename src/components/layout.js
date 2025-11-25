@@ -14,23 +14,37 @@ const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setIsLoading] = useState(isHome);
 
-  // Sets target="_blank" rel="noopener noreferrer" on external links
-  const handleExternalLinks = () => {
-    const allLinks = Array.from(document.querySelectorAll('a'));
-    if (allLinks.length > 0) {
-      allLinks.forEach(link => {
-        if (link.host !== window.location.host) {
-          link.setAttribute('rel', 'noopener noreferrer');
-          link.setAttribute('target', '_blank');
-        }
-      });
-    }
-  };
-
   useEffect(() => {
     if (isLoading) {
       return;
     }
+
+    // Sets target="_blank" rel="noopener noreferrer" on external links
+    // This is a safety net for links in markdown content and dynamically added links
+    const handleExternalLinks = () => {
+      const allLinks = Array.from(document.querySelectorAll('a'));
+      if (allLinks.length > 0) {
+        allLinks.forEach(link => {
+          // Skip if already has target="_blank"
+          if (link.getAttribute('target') === '_blank') {
+            return;
+          }
+
+          // Skip mailto, tel, and other protocol links
+          const href = link.getAttribute('href');
+          if (
+            href &&
+            (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#'))
+          ) {
+            return;
+          }
+          if (link.host && link.host !== window.location.host) {
+            link.setAttribute('rel', 'noopener noreferrer');
+            link.setAttribute('target', '_blank');
+          }
+        });
+      }
+    };
 
     if (location.hash) {
       const id = location.hash.substring(1); // location.hash without the '#'
@@ -44,7 +58,7 @@ const Layout = ({ children, location }) => {
     }
 
     handleExternalLinks();
-  }, [isLoading]);
+  }, [isLoading, location]);
 
   return (
     <>
