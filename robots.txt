@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://shah-khannetlify.app/sitemap.xml
-Host: https://shah-khannetlify.app
+Sitemap: https://shah-khan.netlify.app/sitemap.xml
+Host: https://shah-khan.netlify.app
