@@ -204,9 +204,9 @@ const Nav = ({ isHome }) => {
       )}
     </div>
   );
-
+  //commented out for now
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+    <a className="resume-button" href="/" target="_blank" rel="noopener noreferrer">
       Resume
     </a>
   );
