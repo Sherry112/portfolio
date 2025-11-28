@@ -82,7 +82,7 @@ const Loader = ({ finishLoading }) => {
   }, []);
 
   return (
-    <StyledLoader className="loader" isMounted={isMounted}>
+    <StyledLoader className="loader" isMounted={isMounted} aria-hidden="true">
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
       <div className="logo-wrapper">
